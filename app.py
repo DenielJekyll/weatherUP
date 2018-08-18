@@ -1,5 +1,11 @@
 from flask import Flask
-from WeatherFetcher import WeatherFetcher
+import configparser
+
+Config = configparser.ConfigParser()
+Config.read("./config.ini")
+
+openWeatherAPIKey = Config.get('DEFAULT', 'openWeatherAPIKey')
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,4 +14,5 @@ def hello_world():
 
 
 if __name__ == '__main__':
+
     app.run()
