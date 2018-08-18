@@ -1,7 +1,6 @@
 from flask import Flask
-
+from WeatherFetcher import WeatherFetcher
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello_world():
